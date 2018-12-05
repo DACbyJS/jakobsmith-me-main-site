@@ -5,7 +5,7 @@ get_header();
 	<div class="container">
 		<div class="post_content">
 			<div class="archive_title">
-				<h2><?php echo __('Search Results','vertex').': '. get_search_query(); ?></h2>
+				<h2><?php echo __('Search Results','anchor').': '. get_search_query(); ?></h2>
 			</div><!--//archive_title-->
 			
 				<?php
@@ -21,7 +21,7 @@ get_header();
 										<?php
 											if ( 'video' == get_post_format( get_the_ID() ) ) :
 
-							 					echo vertex_get_video( get_the_ID() );
+							 					echo anchor_get_video( get_the_ID() );
 
 							 				else :
 
@@ -32,7 +32,7 @@ get_header();
 									</div>
 									<div class="port-body">
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<div class="port-cats"><?php echo __('IN','vertex'); the_category(', '); ?></div>
+										<div class="port-cats"><?php echo __('IN','anchor'); the_category(', '); ?></div>
 									</div>
 								</div>
 								<?php
@@ -49,8 +49,8 @@ get_header();
 		<?php
 			else :
 		?>
-				<h2><?php _e('No results found','vertex'); ?></h2>
-				<p><?php _e('Try to search again.','vertex'); ?></p>
+				<h2><?php _e('No results found','anchor'); ?></h2>
+				<p><?php _e('Try to search again.','anchor'); ?></p>
 				<?php get_search_form(); ?>
 				
 		<?php

@@ -56,7 +56,7 @@
 
 								$s = $socials[$i];
 
-								$url = esc_url( vertex_setting('vertex_'.$s) );
+								$url = esc_url( anchor_setting('anchor_'.$s) );
 
 								echo ($url != '' ? '<li><a target="_blank" href="'.$url.'"><img src="'.esc_url( get_stylesheet_directory_uri() ).'/images/'.$s.'-icon.png" alt="'.$s.'" /></a></li>':'');
 

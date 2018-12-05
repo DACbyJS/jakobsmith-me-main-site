@@ -10,13 +10,13 @@ get_header();
 				<?php the_content(); ?>
 					<?php
 					wp_link_pages(array(
-						'before' => '<div class="link_pages">'.__('Pages', 'vertex'),
+						'before' => '<div class="link_pages">'.__('Pages', 'anchor'),
 						'after' => '</div>',
 						'link_before' => '<span>',
 						'link_after' => '</span>'
 					)); 
 				?>
-				<?php the_tags( '<div class="post_tags">'.__('Tags','vertex').': ', ', ', '</div>' ); ?>
+				<?php the_tags( '<div class="post_tags">'.__('Tags','anchor').': ', ', ', '</div>' ); ?>
 				<div class="post-nav">
 					<?php the_post_navigation( array('prev_text' => '&#8592; %title','next_text' => '%title &#8594;') ); ?>
 				</div>

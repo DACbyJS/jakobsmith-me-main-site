@@ -18,7 +18,7 @@ get_header();
 										<?php
 											if ( 'video' == get_post_format( get_the_ID() ) ) :
 
-							 					echo vertex_get_video( get_the_ID() );
+							 					echo anchor_get_video( get_the_ID() );
 
 							 				else :
 

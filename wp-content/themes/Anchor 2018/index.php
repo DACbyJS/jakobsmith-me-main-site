@@ -16,7 +16,7 @@ get_header();
 
 							 				if ( 'video' == get_post_format( get_the_ID() ) ) :
 
-							 					echo vertex_get_video( get_the_ID() );
+							 					echo anchor_get_video( get_the_ID() );
 
 							 				else :
 
@@ -30,7 +30,7 @@ get_header();
 										</div>
 										<div class="blog-post-info">
 											<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-											<div class="blog-post-meta"> <?php the_time(get_option('date_format')); ?> | <a href="<?php comments_link(); ?>"><?php  comments_number( __('0 Comments','vertex'), __(' 1 Comment','vertex'), '% '.__('Comments','vertex') ); ?></a></div>
+											<div class="blog-post-meta"> <?php the_time(get_option('date_format')); ?> | <a href="<?php comments_link(); ?>"><?php  comments_number( __('0 Comments','anchor'), __(' 1 Comment','anchor'), '% '.__('Comments','anchor') ); ?></a></div>
 											<div class="blog-post-excerpt">
 												<p><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ) ?></p>
 											</div>
@@ -47,7 +47,7 @@ get_header();
 							?>
 						</div>
 				</div><!-- blog -->
-			<?php else: echo '<p>'.__('Sorry, no blog posts found. Please create a post and assign it in "blog" category.','vertex').'</p>'; endif; ?>
+			<?php else: echo '<p>'.__('Sorry, no blog posts found. Please create a post and assign it in "blog" category.','anchor').'</p>'; endif; ?>
 			</div>
 		</div>
 	</div>

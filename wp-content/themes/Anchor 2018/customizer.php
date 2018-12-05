@@ -2,7 +2,7 @@
 
 
 
-function vertex_customize_register($wp_customize){
+function anchor_customize_register($wp_customize){
 
 
 
@@ -12,11 +12,11 @@ function vertex_customize_register($wp_customize){
 
 		array( 
 
-			'title' => __('Logo','vertex'), 
+			'title' => __('Logo','anchor'), 
 
 			'capability' => 'edit_theme_options', 
 
-			'description' =>  __('Allows you to edit your theme\'s layout.','vertex')
+			'description' =>  __('Allows you to edit your theme\'s layout.','anchor')
 
 			)
 
@@ -30,11 +30,11 @@ function vertex_customize_register($wp_customize){
 
 		array( 
 
-			'title' =>  __('Social Media','vertex'), 
+			'title' =>  __('Social Media','anchor'), 
 
 			'capability' => 'edit_theme_options', 
 
-			'description' =>  __('Allows you to set your social media URLs','vertex')
+			'description' =>  __('Allows you to set your social media URLs','anchor')
 
 			)
 
@@ -50,13 +50,13 @@ function vertex_customize_register($wp_customize){
 
 		$name = str_replace('-',' ',ucfirst($socials[$i]));
 
-		$wp_customize->add_setting('vertex_'.$socials[$i], array(
+		$wp_customize->add_setting('anchor_'.$socials[$i], array(
 
 	    'capability' => 'edit_theme_options',
 
 	    'type'       => 'theme_mod',
 
-	    'sanitize_callback' => 'vertex_sanitize_customizer_val',
+	    'sanitize_callback' => 'anchor_sanitize_customizer_val',
 
 		));
 
@@ -64,13 +64,13 @@ function vertex_customize_register($wp_customize){
 
 			$wp_customize,
 
-			'vertex_'.$socials[$i],
+			'anchor_'.$socials[$i],
 
 			array(
 
-			    'settings' => 'vertex_'.$socials[$i],
+			    'settings' => 'anchor_'.$socials[$i],
 
-			    'label'    => sprintf( __( '%s URL' ,'vertex' ), $name ),
+			    'label'    => sprintf( __( '%s URL' ,'anchor' ), $name ),
 
 			    'section'  => 'sm_section',
 
@@ -90,11 +90,11 @@ function vertex_customize_register($wp_customize){
 
 		array( 
 
-			'title' =>  __('Featured Text','vertex'), 
+			'title' =>  __('Featured Text','anchor'), 
 
 			'capability' => 'edit_theme_options', 
 
-			'description' =>  __('Allows you to set your footer settings','vertex')
+			'description' =>  __('Allows you to set your footer settings','anchor')
 
 		)
 
@@ -104,7 +104,7 @@ function vertex_customize_register($wp_customize){
 
 	$wp_customize->add_setting(
 
-		'vertex_hometext',
+		'anchor_hometext',
 
 		array(
 
@@ -112,7 +112,7 @@ function vertex_customize_register($wp_customize){
 
 		    'type'       => 'theme_mod',
 
-		    'sanitize_callback' => 'vertex_sanitize_customizer_val',
+		    'sanitize_callback' => 'anchor_sanitize_customizer_val',
 
 		)
 
@@ -124,13 +124,13 @@ function vertex_customize_register($wp_customize){
 
 		$wp_customize,
 
-		'vertex_hometext',
+		'anchor_hometext',
 
 		array(
 
-		    'settings' => 'vertex_hometext',
+		    'settings' => 'anchor_hometext',
 
-		    'label'    => __('Featured Text','vertex'),
+		    'label'    => __('Featured Text','anchor'),
 
 		    'section'  => 'featured_text_section',
 
@@ -148,11 +148,11 @@ function vertex_customize_register($wp_customize){
 
 		array( 
 
-			'title' =>  __('Copyright Text','vertex'), 
+			'title' =>  __('Copyright Text','anchor'), 
 
 			'capability' => 'edit_theme_options', 
 
-			'description' =>  __('Allows you to set your footer settings','vertex')
+			'description' =>  __('Allows you to set your footer settings','anchor')
 
 		)
 
@@ -162,7 +162,7 @@ function vertex_customize_register($wp_customize){
 
 	$wp_customize->add_setting(
 
-		'vertex_copyright',
+		'anchor_copyright',
 
 		array(
 
@@ -170,7 +170,7 @@ function vertex_customize_register($wp_customize){
 
     		'type' => 'theme_mod',
 
-    		'sanitize_callback' => 'vertex_sanitize_customizer_val',
+    		'sanitize_callback' => 'anchor_sanitize_customizer_val',
 
 		)
 
@@ -182,13 +182,13 @@ function vertex_customize_register($wp_customize){
 
 		$wp_customize,
 
-		'vertex_copyright',
+		'anchor_copyright',
 
 		array(
 
-		    'settings' => 'vertex_copyright',
+		    'settings' => 'anchor_copyright',
 
-		    'label'    => __('Copyright Text','vertex'),
+		    'label'    => __('Copyright Text','anchor'),
 
 		    'section'  => 'copyright_section',
 
@@ -202,11 +202,11 @@ function vertex_customize_register($wp_customize){
 
 }
 
-add_action('customize_register', 'vertex_customize_register');
+add_action('customize_register', 'anchor_customize_register');
 
 
 
-function vertex_setting($name, $default = false) {
+function anchor_setting($name, $default = false) {
 
 	return get_theme_mod( $name, $default );
 
@@ -214,7 +214,7 @@ function vertex_setting($name, $default = false) {
 
 
 
-function vertex_sanitize_customizer_val($value){
+function anchor_sanitize_customizer_val($value){
 
 	if (!filter_var($value, FILTER_VALIDATE_URL) === false) //check if URL
 
